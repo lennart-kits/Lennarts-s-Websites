@@ -16,7 +16,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = createMetadata({
   title: "Services",
   description:
-    "AI solutions, software engineering, cloud infrastructure and technical consulting services delivered by Lennart Kits, an Estonia-based technology consultancy.",
+    "AI solutions, software engineering, machine learning, cloud infrastructure and technical consulting services delivered by Lennart Kits, an Indonesia-based technology company.",
   path: "/services",
   keywords: [
     "AI development services",

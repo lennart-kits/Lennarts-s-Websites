@@ -63,8 +63,8 @@ export default function OpengraphImage() {
               lineHeight: 1.4,
             }}
           >
-            Artificial intelligence, software development, machine learning and
-            cloud technologies.
+            Artificial intelligence, software engineering, machine learning and
+            modern cloud technologies.
           </div>
         </div>
 
@@ -83,7 +83,7 @@ export default function OpengraphImage() {
             {siteConfig.url.replace(/^https?:\/\//, "")}
           </div>
           <div style={{ display: "flex" }}>
-            {siteConfig.country} · Reg. {companyRegistry.registryCode}
+            {siteConfig.country} · NIB {companyRegistry.registryCode}
           </div>
         </div>
       </div>

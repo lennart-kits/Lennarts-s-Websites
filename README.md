@@ -1,8 +1,8 @@
 # Lennart Kits — Company Website
 
-Official website for **Lennart Kits**, an Estonia-based technology consultancy
-specializing in artificial intelligence, software development, machine learning
-solutions, and cloud technologies.
+Official website for **Lennart Kits**, an Indonesia-based technology company
+specializing in artificial intelligence, software engineering, machine learning
+solutions, and modern cloud technologies.
 
 Built with Next.js (App Router), TypeScript and Tailwind CSS. Statically
 rendered, no third-party scripts, no tracking cookies.
@@ -19,26 +19,32 @@ a component, so a registry change is a one-file edit.
 | Field | Value |
 | --- | --- |
 | Company | Lennart Kits |
-| Legal form | FIE (Füüsilisest isikust ettevõtja) — Sole Proprietor |
-| Registry code | 16683277 |
-| VAT number | EE102590816 |
-| Registered address | Heki tee 6-19, Haabneeme alevik, Viimsi vald, Harju maakond, 74001, Estonia |
-| Jurisdiction | Republic of Estonia |
-| Public register | Estonian Business Register (e-Äriregister) |
-| Responsible person | Lennart Kits |
-| Email | lennartkits1@gmail.com |
+| Legal form | Perseroan Perorangan (Single-Shareholder Limited Liability Company) |
+| Registration type | NIB (Business Identification Number) |
+| NIB | 1607260079991 |
+| Registered address | Jalan Kakak Tua No.474, RT 005 RW 009, Kelurahan Kranji, Kecamatan Bekasi Barat, Kota Bekasi, Jawa Barat 17134, Indonesia |
+| Jurisdiction | Republic of Indonesia |
+| Responsible person | MUHAMMAD FAWZAN AZHIMA, Director |
+| Email | lennartkitssoletrader@gmail.com |
 | Website | https://lennartkits.vercel.app |
 
-These values must always match the official register entry — they are what a
+There is deliberately **no tax-number field**: only the NIB is published, and no
+component renders a tax row anywhere on the site. If a tax identifier is added
+later, add it to `companyRegistry` in `src/lib/site.ts` and render it in the
+places that list registration details.
+
+These values must always match the official registration — they are what a
 payment provider or financial platform (Wise Business, Stripe and similar)
 checks during verification. Never publish a value that cannot be matched there.
 
 ### Legal pages
 
 `/privacy`, `/terms` and `/cookies` carry the full registered identification of
-the provider and contain no placeholders. They were written for an Estonian EU
-sole proprietor; have them reviewed by a qualified adviser before relying on
-them in a dispute.
+the provider and contain no placeholders. They are written for an Indonesian
+company: the privacy policy is framed around Law No. 27 of 2022 on Personal Data
+Protection (PDP Law), and the terms name the Bekasi District Court as the
+competent forum. Have them reviewed by a qualified Indonesian adviser before
+relying on them in a dispute.
 
 ---
 
@@ -161,7 +167,7 @@ Any Node.js host works equally well: `npm run build && npm run start`.
 
 - [ ] `https://<domain>/sitemap.xml` and `/robots.txt` return the live domain
 - [ ] Contact form delivers a test message to `CONTACT_EMAIL_TO`
-- [ ] `/company` matches the current e-Äriregister entry field for field
+- [ ] `/company` matches the current NIB registration field for field
 - [ ] Legal pages reviewed by a qualified adviser
 - [ ] Domain verified in Resend so the form sender address passes SPF/DKIM
       (a `*.vercel.app` domain cannot be verified — a custom domain is needed)

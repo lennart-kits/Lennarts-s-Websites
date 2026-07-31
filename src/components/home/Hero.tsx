@@ -5,7 +5,7 @@ import { Icon } from "@/components/ui/Icon";
 import { companyRegistry, siteConfig } from "@/lib/site";
 
 const assurances = [
-  `Registered Estonian business · Registry code ${companyRegistry.registryCode}`,
+  `Registered Indonesian company · NIB ${companyRegistry.registryCode}`,
   "Written scope and contract before delivery",
   "Direct communication with the engineer",
 ];
@@ -44,7 +44,7 @@ export function Hero() {
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-600 sm:text-lg">
               We help businesses design, develop, and deploy reliable software,
-              artificial intelligence and machine learning solutions, and
+              artificial intelligence and machine learning solutions, and modern
               cloud-based systems.
             </p>
 

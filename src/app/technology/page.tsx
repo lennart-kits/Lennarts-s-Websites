@@ -44,7 +44,7 @@ const engineeringPractices = [
   {
     title: "Security and data handling",
     description:
-      "Secret management, least-privilege access and GDPR-aware data handling as part of the standard setup.",
+      "Secret management, least-privilege access and privacy-aware data handling as part of the standard setup.",
   },
 ];
 

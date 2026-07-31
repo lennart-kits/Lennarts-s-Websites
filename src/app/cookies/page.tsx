@@ -35,10 +35,10 @@ export default function CookiesPage() {
           <Prose>
             <h2>1. Summary</h2>
             <p>
-              This website is operated by {siteConfig.name},{" "}
-              {companyRegistry.legalFormShort}, registry code{" "}
-              {companyRegistry.registryCode}, registered in the{" "}
-              {companyRegistry.jurisdiction}.
+              This website is operated by {siteConfig.name}, a{" "}
+              {companyRegistry.legalFormShort} registered in the{" "}
+              {companyRegistry.jurisdiction} under{" "}
+              {companyRegistry.registryLabel} {companyRegistry.registryCode}.
             </p>
             <p>
               The site is built to work without tracking. It does not use
@@ -70,8 +70,9 @@ export default function CookiesPage() {
                   <td>Strictly necessary</td>
                   <td>Only if required</td>
                   <td>
-                    Security and abuse protection for form submissions. Exempt
-                    from consent under Art. 5(3) of the ePrivacy Directive.
+                    Security and abuse protection for form submissions. Used
+                    only where technically required to deliver the service you
+                    requested.
                   </td>
                 </tr>
                 <tr>

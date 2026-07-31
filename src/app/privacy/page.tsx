@@ -11,7 +11,7 @@ import { companyRegistry, registeredAddress, siteConfig } from "@/lib/site";
 export const metadata: Metadata = createMetadata({
   title: "Privacy Policy",
   description:
-    "How Lennart Kits collects, uses and protects personal data, including the legal bases for processing and the rights available under the GDPR.",
+    "How Lennart Kits collects, uses and protects personal data, including the legal bases for processing and the rights available under Indonesian Law No. 27 of 2022 on Personal Data Protection.",
   path: "/privacy",
 });
 
@@ -33,16 +33,15 @@ export default function PrivacyPage() {
       <Section>
         <Container width="narrow">
           <Prose>
-            <h2>1. Controller</h2>
+            <h2>1. Data controller</h2>
             <p>
-              The controller responsible for personal data processed through
-              this website is {siteConfig.name},{" "}
-              {companyRegistry.legalFormShort}, registered in the{" "}
-              {companyRegistry.jurisdiction} under registry code{" "}
-              {companyRegistry.registryCode} (VAT number{" "}
-              {companyRegistry.vatNumber}). Further registration details are
-              published on the <Link href="/company">Company Information</Link>{" "}
-              page.
+              The personal data controller responsible for personal data
+              processed through this website is {siteConfig.name}, a{" "}
+              {companyRegistry.legalFormShort} registered in the{" "}
+              {companyRegistry.jurisdiction} under{" "}
+              {companyRegistry.registryLabel} {companyRegistry.registryCode}.
+              Further registration details are published on the{" "}
+              <Link href="/company">Company Information</Link> page.
             </p>
             <ul>
               <li>
@@ -61,12 +60,15 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <strong>Responsible person:</strong>{" "}
-                {companyRegistry.responsiblePerson}
+                {companyRegistry.responsiblePerson},{" "}
+                {companyRegistry.responsiblePersonPosition}
               </li>
             </ul>
             <p>
-              No separate data protection officer is appointed; data protection
-              enquiries are handled directly at the address above.
+              This policy is issued under Law of the Republic of Indonesia No. 27
+              of 2022 on Personal Data Protection (Undang-Undang Pelindungan Data
+              Pribadi, the &ldquo;PDP Law&rdquo;). Data protection enquiries are
+              handled directly at the contact details above.
             </p>
 
             <h2>2. Data we process</h2>
@@ -87,41 +89,47 @@ export default function PrivacyPage() {
             <h3>2.3 Client project data</h3>
             <p>
               Where personal data is processed on behalf of a client during a
-              consulting engagement, we act as a processor under a separate data
-              processing agreement, and that agreement governs the processing —
-              not this policy.
+              consulting engagement, we act as a personal data processor under a
+              separate data processing agreement, and that agreement governs the
+              processing — not this policy. Where a client engagement is subject
+              to another data protection regime, the terms of that agreement
+              apply in addition to the PDP Law.
             </p>
 
             <h2>3. Purposes and legal bases</h2>
+            <p>
+              Each processing activity relies on one of the lawful bases set out
+              in Article 20 of the PDP Law:
+            </p>
             <table>
               <thead>
                 <tr>
                   <th>Purpose</th>
-                  <th>Legal basis (GDPR)</th>
+                  <th>Legal basis (PDP Law)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Responding to enquiries and preparing proposals</td>
                   <td>
-                    Art. 6(1)(b) — steps prior to entering a contract; Art.
-                    6(1)(f) — legitimate interest in business communication
+                    Fulfilment of a request made prior to entering an agreement;
+                    legitimate interest in business communication
                   </td>
                 </tr>
                 <tr>
                   <td>Performing and administering client contracts</td>
-                  <td>Art. 6(1)(b) — performance of a contract</td>
+                  <td>Performance of a contractual obligation</td>
                 </tr>
                 <tr>
                   <td>Website security, abuse prevention and availability</td>
                   <td>
-                    Art. 6(1)(f) — legitimate interest in operating a secure
+                    Legitimate interest in operating a secure and available
                     service
                   </td>
                 </tr>
                 <tr>
                   <td>Accounting and statutory record keeping</td>
-                  <td>Art. 6(1)(c) — compliance with a legal obligation</td>
+                  <td>Compliance with a legal obligation</td>
                 </tr>
               </tbody>
             </table>
@@ -153,10 +161,12 @@ export default function PrivacyPage() {
 
             <h2>5. International transfers</h2>
             <p>
-              Some providers may process data outside the European Economic
-              Area. Where this occurs, transfers are based on an adequacy
-              decision of the European Commission or on Standard Contractual
-              Clauses together with any additional safeguards required.
+              Some providers may process data outside Indonesia. Where this
+              occurs, the transfer is made only where the receiving jurisdiction
+              provides a level of personal data protection at least equivalent to
+              the PDP Law, or on the basis of adequate binding safeguards agreed
+              with the recipient, or with your consent, as required by the PDP
+              Law.
             </p>
 
             <h2>6. Retention</h2>
@@ -168,8 +178,8 @@ export default function PrivacyPage() {
               </li>
               <li>
                 Contract and project records: retained for the duration of the
-                engagement and afterwards as required by Estonian accounting and
-                limitation-period rules.
+                engagement and afterwards for the period required by Indonesian
+                company-document and tax record-keeping rules.
               </li>
               <li>
                 Server logs: retained for a short technical period defined by the
@@ -179,22 +189,30 @@ export default function PrivacyPage() {
 
             <h2>7. Your rights</h2>
             <p>
-              Under the GDPR you may request access to your personal data, its
-              rectification or erasure, restriction of processing, data
-              portability, and you may object to processing based on legitimate
-              interests. Where processing is based on consent, you may withdraw
-              that consent at any time without affecting the lawfulness of
-              processing carried out beforehand.
+              As a personal data subject under the PDP Law you may request
+              information about the processing of your personal data, access to
+              it, and its correction or erasure. You may request that processing
+              be restricted, object to processing, withdraw consent where the
+              processing relies on it, and request that your data be transferred
+              to another controller where technically possible. Withdrawing
+              consent does not affect processing carried out beforehand.
             </p>
             <p>
               To exercise these rights, contact{" "}
               <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>. We
-              respond within one month, as required by Art. 12(3) GDPR.
+              acknowledge requests without undue delay and respond within 14
+              days, or tell you within that period if more time is needed.
             </p>
             <p>
-              You also have the right to lodge a complaint with a supervisory
-              authority. In Estonia this is the Estonian Data Protection
-              Inspectorate (Andmekaitse Inspektsioon), Tatari 39, 10134 Tallinn.
+              If a personal data breach occurs, affected data subjects are
+              notified in writing within 3 × 24 hours, as required by the PDP
+              Law.
+            </p>
+            <p>
+              You may also lodge a complaint with the supervisory authority
+              designated under the PDP Law, and you retain the right to seek
+              compensation through the courts of the{" "}
+              {companyRegistry.jurisdiction}.
             </p>
 
             <h2>8. Cookies</h2>

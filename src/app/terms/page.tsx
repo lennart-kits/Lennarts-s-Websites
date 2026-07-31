@@ -35,17 +35,14 @@ export default function TermsPage() {
           <Prose>
             <h2>1. Provider</h2>
             <p>
-              This website is operated by {siteConfig.name}, a sole proprietor
-              ({companyRegistry.legalFormShort}) registered in the{" "}
+              This website is operated by {siteConfig.name}, a{" "}
+              {companyRegistry.legalForm} registered in the{" "}
               {companyRegistry.jurisdiction}:
             </p>
             <ul>
               <li>
-                <strong>Registry code:</strong> {companyRegistry.registryCode} (
-                {companyRegistry.supervisoryRegister})
-              </li>
-              <li>
-                <strong>VAT number:</strong> {companyRegistry.vatNumber}
+                <strong>{companyRegistry.registryLabel}:</strong>{" "}
+                {companyRegistry.registryCode}
               </li>
               <li>
                 <strong>Registered address:</strong>{" "}
@@ -63,7 +60,8 @@ export default function TermsPage() {
               </li>
               <li>
                 <strong>Responsible person:</strong>{" "}
-                {companyRegistry.responsiblePerson}
+                {companyRegistry.responsiblePerson},{" "}
+                {companyRegistry.responsiblePersonPosition}
               </li>
             </ul>
             <p>
@@ -163,10 +161,10 @@ export default function TermsPage() {
             <p>
               These terms are governed by the laws of the{" "}
               {companyRegistry.jurisdiction}. Disputes that cannot be resolved
-              amicably fall under the jurisdiction of Harju County Court (Harju
-              Maakohus), the court of first instance competent for the
-              registered seat of the provider, without prejudice to mandatory
-              consumer protection rules that may apply.
+              amicably fall under the jurisdiction of the Bekasi District Court
+              (Pengadilan Negeri Bekasi), the court of first instance competent
+              for the registered seat of the provider, without prejudice to
+              mandatory consumer protection rules that may apply.
             </p>
 
             <h2>11. Changes</h2>

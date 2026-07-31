@@ -107,15 +107,15 @@ export const valuePoints: { title: string; description: string; icon: IconName }
       icon: "ai",
     },
     {
-      title: "European base, international delivery",
+      title: "Indonesian base, international delivery",
       description:
-        "Registered in Estonia as a sole proprietor (FIE), registry code 16683277, operating within the EU legal and data-protection framework and working with clients across Europe and beyond.",
+        "Registered in the Republic of Indonesia as a Perseroan Perorangan under Business Identification Number (NIB) 1607260079991, working with clients across Indonesia and internationally.",
       icon: "globe",
     },
     {
       title: "Contract and compliance ready",
       description:
-        "Standard written agreements, NDAs and data processing terms; invoicing as a VAT-registered Estonian business under VAT number EE102590816.",
+        "Standard written agreements, NDAs and data processing terms; invoicing as a registered Indonesian company under NIB 1607260079991.",
       icon: "document",
     },
   ];

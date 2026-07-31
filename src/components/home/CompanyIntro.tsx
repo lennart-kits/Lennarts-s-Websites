@@ -15,9 +15,9 @@ export function CompanyIntro() {
               The company
             </p>
             <p className="mt-6 text-xl leading-relaxed font-medium text-ink-900 sm:text-2xl">
-              {siteConfig.name} is an Estonia-based technology consultancy
-              specializing in artificial intelligence, software development,
-              machine learning solutions, and cloud technologies.
+              {siteConfig.name} is an Indonesia-based technology company
+              specializing in artificial intelligence, software engineering,
+              machine learning solutions, and modern cloud technologies.
             </p>
             <p className="mt-5 text-base leading-relaxed text-ink-600">
               We work with organisations that need experienced engineering

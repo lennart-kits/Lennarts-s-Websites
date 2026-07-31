@@ -17,9 +17,9 @@ export const metadata: Metadata = createMetadata({
   description: siteConfig.description,
   path: "/about",
   keywords: [
-    "Estonian IT company",
-    "technology consultancy Estonia",
-    "AI consultancy Europe",
+    "Indonesian IT company",
+    "technology company Indonesia",
+    "AI engineering Indonesia",
     "machine learning solutions",
   ],
 });
@@ -47,7 +47,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About"
-        title="An Estonia-based technology consultancy"
+        title="An Indonesia-based technology company"
         description={siteConfig.description}
         breadcrumb={[
           { name: "Home", path: "/" },
@@ -83,12 +83,14 @@ export default function AboutPage() {
                 </p>
                 <p>
                   {siteConfig.name} is registered in the{" "}
-                  {companyRegistry.jurisdiction} as a sole proprietor (FIE)
-                  under registry code {companyRegistry.registryCode} and VAT
-                  number {companyRegistry.vatNumber}, and therefore operates
-                  within the European Union legal and data protection framework.
-                  Clients are served across Europe and internationally, with work
-                  delivered remotely, in English, under written agreement.
+                  {companyRegistry.jurisdiction} as a{" "}
+                  {companyRegistry.legalFormShort} under{" "}
+                  {companyRegistry.registryLabel}{" "}
+                  {companyRegistry.registryCode}, with{" "}
+                  {companyRegistry.responsiblePerson} as{" "}
+                  {companyRegistry.responsiblePersonPosition}. Clients are served
+                  across Indonesia and internationally, with work delivered
+                  remotely, in English, under written agreement.
                 </p>
               </div>
 
@@ -113,16 +115,19 @@ export default function AboutPage() {
                     { term: "Company", detail: siteConfig.name },
                     {
                       term: "Legal form",
-                      detail: companyRegistry.legalFormShort,
+                      detail: companyRegistry.legalForm,
                     },
                     {
-                      term: "Registry code",
+                      term: companyRegistry.registryLabel,
                       detail: companyRegistry.registryCode,
                     },
-                    { term: "VAT number", detail: companyRegistry.vatNumber },
                     {
                       term: "Responsible person",
                       detail: companyRegistry.responsiblePerson,
+                    },
+                    {
+                      term: "Position",
+                      detail: companyRegistry.responsiblePersonPosition,
                     },
                     { term: "Country", detail: siteConfig.country },
                     { term: "Industry", detail: siteConfig.industry },
@@ -136,7 +141,7 @@ export default function AboutPage() {
                     },
                     {
                       term: "Clients served",
-                      detail: "Europe and international",
+                      detail: "Indonesia and international",
                     },
                   ].map((row) => (
                     <div

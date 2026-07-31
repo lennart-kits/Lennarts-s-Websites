@@ -118,13 +118,23 @@ export default async function ContactPage({
                   </div>
                   <div>
                     <dt className="font-mono text-[0.6875rem] tracking-[0.14em] text-ink-500 uppercase">
-                      Registered entity
+                      Company
                     </dt>
                     <dd className="mt-1.5 text-sm leading-relaxed font-medium text-ink-900">
-                      {siteConfig.name} · {companyRegistry.legalFormShort}
+                      {siteConfig.name}
                       <br />
-                      Registry code {companyRegistry.registryCode} · VAT{" "}
-                      {companyRegistry.vatNumber}
+                      {companyRegistry.legalForm}
+                      <br />
+                      {companyRegistry.registryLabel}:{" "}
+                      {companyRegistry.registryCode}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-mono text-[0.6875rem] tracking-[0.14em] text-ink-500 uppercase">
+                      Country
+                    </dt>
+                    <dd className="mt-1.5 text-sm font-medium text-ink-900">
+                      {siteConfig.country}
                     </dd>
                   </div>
                   <div>

@@ -45,8 +45,8 @@ export function createMetadata({
 
 /**
  * Organization structured data. Only verifiable, non-invented facts are
- * emitted — registry identifiers come from the Estonian Business Register, and
- * there are no employee counts, revenue figures or ratings.
+ * emitted — the identifier is the company's Indonesian NIB, and there are no
+ * employee counts, revenue figures or ratings.
  */
 export function organizationJsonLd() {
   return {
@@ -59,23 +59,22 @@ export function organizationJsonLd() {
     email: siteConfig.email,
     description: siteConfig.description,
     slogan: siteConfig.tagline,
-    /** Estonian registry code (registrikood). */
+    /** Indonesian Business Identification Number (Nomor Induk Berusaha). */
     identifier: {
       "@type": "PropertyValue",
-      name: "Estonian Business Register code",
+      name: companyRegistry.registryLabel,
       value: companyRegistry.registryCode,
     },
-    taxID: companyRegistry.registryCode,
-    vatID: companyRegistry.vatNumber,
     founder: {
       "@type": "Person",
       name: companyRegistry.responsiblePerson,
+      jobTitle: companyRegistry.responsiblePersonPosition,
     },
     address: {
       "@type": "PostalAddress",
-      streetAddress: registeredAddress.street,
-      addressLocality: registeredAddress.locality,
-      addressRegion: registeredAddress.region,
+      streetAddress: registeredAddress.schemaStreetAddress,
+      addressLocality: registeredAddress.city,
+      addressRegion: registeredAddress.province,
       postalCode: registeredAddress.postalCode,
       addressCountry: registeredAddress.countryCode,
     },
@@ -87,7 +86,8 @@ export function organizationJsonLd() {
       areaServed: "Worldwide",
     },
     areaServed: [
-      { "@type": "Place", name: "Europe" },
+      { "@type": "Country", name: "Indonesia" },
+      { "@type": "Place", name: "Southeast Asia" },
       { "@type": "Place", name: "Worldwide" },
     ],
     knowsAbout: [
