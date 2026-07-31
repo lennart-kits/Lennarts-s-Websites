@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Lennart Kits — design tokens
+   Corporate European B2B technology palette: white canvas, near-black navy
+   ink, a single cobalt brand accent, one restrained teal support colour.
+   ========================================================================== */
+
+@theme {
+  /* Brand — cobalt */
+  --color-brand-50: #f0f4ff;
+  --color-brand-100: #dfe8ff;
+  --color-brand-200: #c3d3ff;
+  --color-brand-300: #9bb3ff;
+  --color-brand-400: #6f8cfa;
+  --color-brand-500: #4a67ef;
+  --color-brand-600: #2f4bdc;
+  --color-brand-700: #2439b8;
+  --color-brand-800: #223193;
+  --color-brand-900: #212e74;
+  --color-brand-950: #161d47;
+
+  /* Ink — near-black navy used for headings, footer and dark panels */
+  --color-ink-50: #f5f7fa;
+  --color-ink-100: #e9edf3;
+  --color-ink-200: #d3dae6;
+  --color-ink-300: #adb9cd;
+  --color-ink-400: #7f8fab;
+  --color-ink-500: #5f6f8c;
+  --color-ink-600: #4a5872;
+  --color-ink-700: #3c475d;
+  --color-ink-800: #2a3346;
+  --color-ink-900: #131a29;
+  --color-ink-950: #080d17;
+
+  /* Support — muted teal, used sparingly for diagram and status accents */
+  --color-support-100: #d7f2ef;
+  --color-support-300: #7fd6cd;
+  --color-support-500: #17a398;
+  --color-support-700: #0e6f68;
+
+  /* Typography */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-mono-brand), ui-monospace, SFMono-Regular, Menlo,
+    Consolas, monospace;
+
+  /* Editorial display sizes */
+  --text-display: 3.75rem;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.03em;
+  --text-headline: 2.5rem;
+  --text-headline--line-height: 1.15;
+  --text-headline--letter-spacing: -0.02em;
+
+  /* Elevation — soft, low-contrast, corporate */
+  --shadow-card: 0 1px 2px rgb(8 13 23 / 0.04), 0 8px 24px -12px rgb(8 13 23 / 0.12);
+  --shadow-lifted: 0 2px 4px rgb(8 13 23 / 0.05), 0 18px 40px -20px rgb(8 13 23 / 0.22);
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    /* Offset for the sticky header when jumping to in-page anchors */
+    scroll-padding-top: 6.5rem;
+  }
+
+  html,
+  body {
+    max-width: 100%;
+    /* `clip` rather than `hidden`: it prevents horizontal overflow without
+       creating a scroll container, which would break the sticky header. */
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink-800);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-ink-950);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Consistent, always-visible focus treatment */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-600);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-100);
+    color: var(--color-ink-950);
+  }
+}
+
+@layer components {
+  /* Subtle engineering grid used behind the hero and dark CTA panels */
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        rgb(8 13 23 / 0.045) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgb(8 13 23 / 0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-grid-inverted {
+    background-image: linear-gradient(
+        to right,
+        rgb(255 255 255 / 0.06) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .reveal {
+    animation: reveal-up 0.7s var(--ease-out-soft) both;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
